@@ -12,10 +12,7 @@ class TestPredictionApplication(unittest.TestCase):
         response = self.client.get("/")
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(
-            response.get_json()["status"],
-            "ok"
-        )
+        self.assertEqual(response.get_json()["status"], "ok")
 
     def test_high_performance_prediction(self):
         response = self.client.post(
